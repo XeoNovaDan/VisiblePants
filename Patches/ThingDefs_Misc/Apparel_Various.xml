@@ -5,12 +5,12 @@
 	<success>Always</success>
 	<operations>
 		<li Class="PatchOperationTest">
-			<xpath>/ThingDefs/ThingDef[defName = "Apparel_Pants"]/apparel/worngraphicPath</xpath>
+			<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
 		</li>
 		<li Class="PatchOperationReplace">
-			<xpath>/ThingDefs/ThingDef[defName = "Apparel_Pants"]/apparel/worngraphicPath</xpath>
+			<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
 			<value>
-				<worngraphicPath>Pants/Pants</worngraphicPath>
+				<wornGraphicPath>Pants/Pants</wornGraphicPath>
 			</value>
 		</li>
 	</operations>
@@ -20,13 +20,13 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationTest">
-				<xpath>/ThingDefs/ThingDef[defName = "Apparel_Pants"]/apparel/worngraphicPath</xpath>
+				<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
 				<success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>/ThingDefs/ThingDef[defName = "Apparel_Pants"]/apparel</xpath>
+				<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel</xpath>
 				<value>
-					<worngraphicPath>Pants/Pants</worngraphicPath>
+					<wornGraphicPath>Pants/Pants</wornGraphicPath>
 				</value>
 			</li>
 		</operations>
