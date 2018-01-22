@@ -2,32 +2,36 @@
 <Patch>
 
 	<Operation Class="PatchOperationSequence">
-	<success>Always</success>
-	<operations>
-		<li Class="PatchOperationTest">
-			<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
-		</li>
-		<li Class="PatchOperationReplace">
-			<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
-			<value>
-				<wornGraphicPath>Pants/Pants</wornGraphicPath>
-			</value>
-		</li>
-	</operations>
-</Operation>
-
-	<Operation Class="PatchOperationSequence">
 		<success>Always</success>
 		<operations>
-			<li Class="PatchOperationTest">
-				<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
-				<success>Invert</success>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationTest">
+						<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
+					</li>
+					<li Class="PatchOperationReplace">
+						<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
+						<value>
+							<wornGraphicPath>Pants/Pants</wornGraphicPath>
+						</value>
+					</li>
+				</operations>
 			</li>
-			<li Class="PatchOperationAdd">
-				<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel</xpath>
-				<value>
-					<wornGraphicPath>Pants/Pants</wornGraphicPath>
-				</value>
+			<li Class="PatchOperationSequence">
+				<success>Always</success>
+				<operations>
+					<li Class="PatchOperationTest">
+						<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
+						<success>Invert</success>
+					</li>
+					<li Class="PatchOperationAdd">
+						<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel</xpath>
+						<value>
+							<wornGraphicPath>Pants/Pants</wornGraphicPath>
+						</value>
+					</li>
+				</operations>
 			</li>
 		</operations>
 	</Operation>
