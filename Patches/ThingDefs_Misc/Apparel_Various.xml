@@ -1,39 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
+	<!-- Pants -->
+
 	<Operation Class="PatchOperationSequence">
 		<success>Always</success>
 		<operations>
-			<li Class="PatchOperationSequence">
-				<success>Always</success>
-				<operations>
-					<li Class="PatchOperationTest">
-						<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
-					</li>
-					<li Class="PatchOperationReplace">
-						<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
-						<value>
-							<wornGraphicPath>Pants/Pants</wornGraphicPath>
-						</value>
-					</li>
-				</operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/ThingDef[defName="Apparel_Pants"]/apparel/wornGraphicPath</xpath>
 			</li>
-			<li Class="PatchOperationSequence">
-				<success>Always</success>
-				<operations>
-					<li Class="PatchOperationTest">
-						<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel/wornGraphicPath</xpath>
-						<success>Invert</success>
-					</li>
-					<li Class="PatchOperationAdd">
-						<xpath>/Defs/ThingDef[defName = "Apparel_Pants"]/apparel</xpath>
-						<value>
-							<wornGraphicPath>Pants/Pants</wornGraphicPath>
-						</value>
-					</li>
-				</operations>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Apparel_Pants"]/apparel/wornGraphicPath</xpath>
 			</li>
 		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="Apparel_Pants"]/apparel</xpath>
+		<value>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</wornGraphicPath>
+		</value>
+	</Operation>
+
+	<!-- Flak Pants -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/ThingDef[defName="Apparel_FlakPants"]/apparel/wornGraphicPath</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Apparel_FlakPants"]/apparel/wornGraphicPath</xpath>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="Apparel_FlakPants"]/apparel</xpath>
+		<value>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/Pants/Pants</wornGraphicPath>
+		</value>
 	</Operation>
 
 </Patch>
