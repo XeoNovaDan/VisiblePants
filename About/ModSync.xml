@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModSyncNinjaData>
+  <ID>fe4e1633-b784-4d76-b3cc-cabe7eb898c5</ID>
+  <ModName>[XND] Visible Pants</ModName>
+  <Version>1.1</Version>
+  <SaveBreaking>False</SaveBreaking>
+  <Host name="Github">
+    <Owner>XeoNovaDan</Owner>
+    <Project>VisiblePants</Project>
+    <AboutDir>About</AboutDir>
+    <DownloadFrom>ModSyncMainPage</DownloadFrom>
+    <Branch>master</Branch>
+  </Host>
+</ModSyncNinjaData>
