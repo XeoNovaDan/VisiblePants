@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Text;
 using UnityEngine;
 using Verse;
@@ -20,16 +23,20 @@ namespace VisiblePants
             HarmonyInstance h = HarmonyInstance.Create("XeoNovaDan.VisiblePants");
 
             h.Patch(AccessTools.Method(typeof(Pawn_ApparelTracker), "SortWornApparelIntoDrawOrder"),
-                new HarmonyMethod(patchType, nameof(Prefix_SortWornApparelIntoDrawOrder)));
+                new HarmonyMethod(patchType, nameof(Detour_SortWornApparelIntoDrawOrder)));
         }
 
-        public static bool Prefix_SortWornApparelIntoDrawOrder(Pawn_ApparelTracker __instance, ref ThingOwner<Apparel> ___wornApparel)
+        public static bool Detour_SortWornApparelIntoDrawOrder(Pawn_ApparelTracker __instance, ref ThingOwner<Apparel> ___wornApparel)
         {
-            ___wornApparel.InnerListForReading.Sort((Apparel a, Apparel b) => (a.IsPants() ? 99 : a.def.apparel.LastLayer.drawOrder).CompareTo(b.def.apparel.LastLayer.drawOrder));
+            ___wornApparel.InnerListForReading.Sort((Apparel a, Apparel b) => AdjustedDrawOrder(a.def).CompareTo(AdjustedDrawOrder(b.def)));
             return false;
         }
 
-        private static bool IsPants(this Apparel a) => a.def == VP_ThingDefOf.Apparel_Pants || a.def == VP_ThingDefOf.Apparel_FlakPants;
+        private static int AdjustedDrawOrder(ThingDef apparel) =>
+            apparel.apparel.LastLayer.drawOrder + ((apparel.IsPants()) ? 99 : 0);
+
+        private static bool IsPants(this ThingDef apparel) =>
+            apparel == VP_ThingDefOf.Apparel_Pants || apparel == VP_ThingDefOf.Apparel_FlakPants;
 
     }
 }
