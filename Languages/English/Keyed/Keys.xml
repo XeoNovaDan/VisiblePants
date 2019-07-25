@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <VisiblePants.SettingsCategory>Visible Pants</VisiblePants.SettingsCategory>
+
+    <VisiblePants.DrawPantsOver>Draw pants over shirts</VisiblePants.DrawPantsOver>
+    <VisiblePants.DrawPantsOver_Tooltip>When enabled, shirts will have a tucked-in appearance.</VisiblePants.DrawPantsOver_Tooltip>
+
+</LanguageData>
