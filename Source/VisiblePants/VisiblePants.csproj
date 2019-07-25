@@ -50,10 +50,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\Patch_Pawn.cs" />
     <Compile Include="HarmonyPatches\Patch_Pawn_ApparelTracker.cs" />
     <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\ReflectedMethods.cs" />
     <Compile Include="ThingDefExtension.cs" />
+    <Compile Include="VisiblePantsUtility.cs" />
     <Compile Include="VisiblePants.cs" />
     <Compile Include="VisiblePantsSettings.cs" />
   </ItemGroup>

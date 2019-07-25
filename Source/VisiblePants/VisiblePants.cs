@@ -16,14 +16,14 @@ namespace VisiblePants
 
         public VisiblePants(ModContentPack content) : base(content)
         {
-            GetSettings<VisiblePantsSettings>();
+            settings = GetSettings<VisiblePantsSettings>();
         }
 
         public override string SettingsCategory() => "VisiblePants.SettingsCategory".Translate();
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
-            GetSettings<VisiblePantsSettings>().DoWindowContents(inRect);
+            settings.DoWindowContents(inRect);
         }
 
     }

@@ -16,36 +16,23 @@ namespace VisiblePants
     public static class Patch_Pawn_ApparelTracker
     {
 
-        public static class ManualPatch_SortWornApparelIntoDrawOrder
+        [HarmonyPatch(typeof(Pawn_ApparelTracker))]
+        [HarmonyPatch("SortWornApparelIntoDrawOrder")]
+        public static class Patch_SortWornApparelIntoDrawOrder
         {
 
-            public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+            public static bool Prefix(Pawn_ApparelTracker __instance, ThingOwner<Apparel> ___wornApparel)
             {
-                var instructionList = instructions.ToList();
-
-                var drawOrderInfo = AccessTools.Field(typeof(ApparelLayerDef), nameof(ApparelLayerDef.drawOrder));
-
-                for (int i = 0; i < instructionList.Count; i++)
-                {
-                    var instruction = instructionList[i];
-
-                    if (instruction.opcode == OpCodes.Callvirt && instruction.operand == drawOrderInfo)
-                    {
-                        var thirdInstructionBehind = instructionList[i - 3];
-                        yield return instruction; // a.def.apparel.LastLayer.drawOrder or b.def.apparel.LastLayer.drawOrder
-                        yield return new CodeInstruction(thirdInstructionBehind.opcode, thirdInstructionBehind.operand); // a or b
-                        instruction = new CodeInstruction(OpCodes.Call);
-                    }
-
-                    yield return instruction;
-                }
+                // I don't like doing detours but this was too much of a pain to transpile
+                ___wornApparel.InnerListForReading.Sort((Apparel a, Apparel b) => AdjustedDrawOrder(a.def.apparel.LastLayer.drawOrder, a.def).CompareTo(AdjustedDrawOrder(b.def.apparel.LastLayer.drawOrder, b.def)));
+                return false;
             }
 
-            public static int AdjustedDrawOrder(int original, Apparel apparel)
+            public static int AdjustedDrawOrder(int original, ThingDef apparelDef)
             {
-                // Determine the new draw order if apparel has this mod's ThingDefExtension (which effectively acts like a flag)
-                if (VisiblePantsSettings.drawPantsOver && apparel.def.HasModExtension<ThingDefExtension>())
-                    return original + 1;
+                // If the apparel def has this mod's ThingDefExtension (essentially a flag), add 1 to the draw order
+                if (apparelDef.HasModExtension<ThingDefExtension>())
+                    return original + (VisiblePantsSettings.drawPantsOver ? 1 : -1);
 
                 return original;
             }

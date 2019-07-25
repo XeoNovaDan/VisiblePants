@@ -36,6 +36,9 @@ namespace VisiblePants
         public override void ExposeData()
         {
             Scribe_Values.Look(ref drawPantsOver, "drawPantsOver", drawPantsOver);
+
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+                VisiblePantsUtility.cachedDrawPantsOver = drawPantsOver;
         }
 
     }
