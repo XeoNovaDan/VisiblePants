@@ -8,13 +8,9 @@ using RimWorld;
 
 namespace VisiblePants
 {
-    [DefOf]
-    public static class VP_ThingDefOf
+
+    public class ThingDefExtension : DefModExtension
     {
-
-        public static ThingDef Apparel_Pants;
-
-        public static ThingDef Apparel_FlakPants;
-
     }
+
 }
