@@ -1,6 +1,6 @@
 <Manifest>
     <identifier>VisiblePants</identifier>
     <manifestUri>https://cdn.jsdelivr.net/gh/XeoNovaDan/VisiblePants/About/Manifest.xml</manifestUri>
-    <version>3.0</version>
     <downloadUri>https://github.com/XeoNovaDan/VisiblePants/releases</downloadUri>
+    <version>3.0</version>
 </Manifest>

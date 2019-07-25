@@ -23,7 +23,7 @@
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>/Defs/ThingDef[defName="Apparel_Pants" or defName="Apparel_FlakPants"]</xpath>
 		<value>
-			<li Class="VisiblePants.ThingDefExtension"/>>
+			<li Class="VisiblePants.ThingDefExtension"/>
 		</value>
 	</Operation>
 
