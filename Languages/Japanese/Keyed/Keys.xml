@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <VisiblePants.SettingsCategory>Visible Pants</VisiblePants.SettingsCategory>
+
+  <VisiblePants.DrawPantsOver>〇 シャツの上にズボンを描画する</VisiblePants.DrawPantsOver>
+  <VisiblePants.DrawPantsOver_Tooltip>有効にすると、シャツの裾がパンツに隠れます。</VisiblePants.DrawPantsOver_Tooltip>
+
+</LanguageData>
