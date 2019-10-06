@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Vanilla Apparel Expanded</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- All relevant apparel -->
+				<li Class="PatchOperationSequence">
+					<success>Always</success>
+					<operations>
+						<li Class="PatchOperationTest">
+							<xpath>/Defs/ThingDef[defName="VAE_Apparel_Jeans" or defName="VAE_Apparel_Shorts" or defName="VAE_Apparel_Skirt" or defName="VAE_Apparel_Trousers"]/apparel/wornGraphicPath</xpath>
+						</li>
+						<li Class="PatchOperationRemove">
+							<xpath>/Defs/ThingDef[defName="VAE_Apparel_Jeans" or defName="VAE_Apparel_Shorts" or defName="VAE_Apparel_Skirt" or defName="VAE_Apparel_Trousers"]/apparel/wornGraphicPath</xpath>
+						</li>
+					</operations>
+				</li>
+
+				<li Class="PatchOperationAddModExtension">
+					<xpath>/Defs/ThingDef[defName="VAE_Apparel_Jeans" or defName="VAE_Apparel_Shorts" or defName="VAE_Apparel_Skirt" or defName="VAE_Apparel_Trousers"]</xpath>
+					<value>
+						<li Class="VisiblePants.ThingDefExtension"/>
+					</value>
+				</li>
+
+				<!-- Jeans -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="VAE_Apparel_Jeans"]/apparel</xpath>
+					<value>
+						<wornGraphicPath>VanillaApparelExpanded/Things/Pawn/Humanlike/Apparel/Jeans/Jeans</wornGraphicPath>
+					</value>
+				</li>
+
+				<!-- Shorts -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="VAE_Apparel_Shorts"]/apparel</xpath>
+					<value>
+						<wornGraphicPath>VanillaApparelExpanded/Things/Pawn/Humanlike/Apparel/Shorts/Shorts</wornGraphicPath>
+					</value>
+				</li>
+
+				<!-- Skirt -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="VAE_Apparel_Skirt"]/apparel</xpath>
+					<value>
+						<wornGraphicPath>VanillaApparelExpanded/Things/Pawn/Humanlike/Apparel/Skirt/Skirt</wornGraphicPath>
+					</value>
+				</li>
+
+				<!-- Trousers -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="VAE_Apparel_Trousers"]/apparel</xpath>
+					<value>
+						<wornGraphicPath>VanillaApparelExpanded/Things/Pawn/Humanlike/Apparel/Trousers/Trousers</wornGraphicPath>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

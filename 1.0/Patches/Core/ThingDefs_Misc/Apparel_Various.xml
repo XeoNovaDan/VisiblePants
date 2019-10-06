@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- Pants and Flak Pants -->
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>/Defs/ThingDef[defName="Apparel_Pants" or defName="Apparel_FlakPants"]/apparel/wornGraphicPath</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[defName="Apparel_Pants" or defName="Apparel_FlakPants"]/apparel/wornGraphicPath</xpath>
+			</li>
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="Apparel_Pants" or defName="Apparel_FlakPants"]/apparel</xpath>
+		<value>
+			<wornGraphicPath>Core/Things/Pawn/Humanlike/Apparel/Pants/Pants</wornGraphicPath>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>/Defs/ThingDef[defName="Apparel_Pants" or defName="Apparel_FlakPants"]</xpath>
+		<value>
+			<li Class="VisiblePants.ThingDefExtension"/>
+		</value>
+	</Operation>
+
+</Patch>
