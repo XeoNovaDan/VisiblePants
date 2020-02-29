@@ -8,7 +8,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
-using Harmony;
+using HarmonyLib;
 
 namespace VisiblePants
 {
@@ -18,8 +18,7 @@ namespace VisiblePants
 
         static HarmonyPatches()
         {
-            var h = HarmonyInstance.Create("XeoNovaDan.VisiblePants");
-            h.PatchAll();
+            VisiblePants.harmonyInstance.PatchAll();
         }
 
     }

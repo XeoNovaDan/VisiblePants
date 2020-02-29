@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using Verse;
 using RimWorld;
+using HarmonyLib;
 
 namespace VisiblePants
 {
@@ -13,10 +14,12 @@ namespace VisiblePants
     {
 
         public VisiblePantsSettings settings;
+        public static Harmony harmonyInstance;
 
         public VisiblePants(ModContentPack content) : base(content)
         {
             settings = GetSettings<VisiblePantsSettings>();
+            harmonyInstance = new Harmony("XeoNovaDan.VisiblePants");
         }
 
         public override string SettingsCategory() => "VisiblePants.SettingsCategory".Translate();

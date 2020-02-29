@@ -2,9 +2,11 @@
 	<ModMetaData>
 		<name>[XND] Visible Pants</name>
 		<author>XeoNovaDan</author>
-		<url>https://ludeon.com/forums/index.php?topic=29503.0</url>
+		<packageId>XeoNovaDan.VisiblePants</packageId>
+		<url>https://steamcommunity.com/sharedfiles/filedetails/?id=926698084</url>
 		<supportedVersions>
 			<li>1.0</li>
+			<li>1.1</li>
 		</supportedVersions>
 		<description>A mod that allows you to see everybody's trousers, for that complete feel!</description>
 </ModMetaData>

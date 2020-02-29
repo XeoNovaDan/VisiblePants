@@ -1,5 +1,0 @@
-E:\Documents\GitHub\VisiblePants\Assemblies\VisiblePants.dll
-E:\Documents\GitHub\VisiblePants\Source\VisiblePants\obj\Debug\VisiblePants.csprojAssemblyReference.cache
-E:\Documents\GitHub\VisiblePants\Source\VisiblePants\obj\Debug\VisiblePants.csproj.CoreCompileInputs.cache
-E:\Documents\GitHub\VisiblePants\Source\VisiblePants\obj\Debug\VisiblePants.dll
-E:\Documents\GitHub\VisiblePants\1.0\Assemblies\VisiblePants.dll
