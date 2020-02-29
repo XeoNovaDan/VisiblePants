@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<ModMetaData>
-		<name>[XND] Visible Pants</name>
-		<author>XeoNovaDan</author>
-		<packageId>XeoNovaDan.VisiblePants</packageId>
-		<url>https://steamcommunity.com/sharedfiles/filedetails/?id=926698084</url>
-		<supportedVersions>
-			<li>1.0</li>
-			<li>1.1</li>
-		</supportedVersions>
-		<description>A mod that allows you to see everybody's trousers, for that complete feel!</description>
+<ModMetaData>
+	<name>[XND] Visible Pants</name>
+	<author>XeoNovaDan</author>
+	<packageId>XeoNovaDan.VisiblePants</packageId>
+	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=926698084</url>
+	<supportedVersions>
+		<li>1.0</li>
+		<li>1.1</li>
+	</supportedVersions>
+	<description>A mod that allows you to see everybody's trousers, for that complete feel!</description>
+	<modDependencies>
+		<li>
+			<packageId>UnlimitedHugs.HugsLib</packageId>
+			<displayName>HugsLib</displayName>
+			<downloadUrl>https://github.com/UnlimitedHugs/RimworldHugsLib/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=818773962</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>UnlimitedHugs.HugsLib</li>
+	</loadAfter>
 </ModMetaData>
