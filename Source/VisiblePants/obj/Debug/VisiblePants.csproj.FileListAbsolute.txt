@@ -1,3 +1,6 @@
 D:\Documents\GitHub\VisiblePants\1.1\Assemblies\VisiblePants.dll
 D:\Documents\GitHub\VisiblePants\Source\VisiblePants\obj\Debug\VisiblePants.csprojAssemblyReference.cache
 D:\Documents\GitHub\VisiblePants\Source\VisiblePants\obj\Debug\VisiblePants.dll
+C:\Users\jonat\Desktop\VisiblePants\Source\VisiblePants\obj\Debug\VisiblePants.csproj.CoreCompileInputs.cache
+C:\Users\jonat\Desktop\VisiblePants\Source\VisiblePants\obj\Debug\VisiblePants.dll
+C:\Users\jonat\Desktop\VisiblePants\1.2\Assemblies\VisiblePants.dll

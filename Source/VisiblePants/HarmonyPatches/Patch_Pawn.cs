@@ -33,7 +33,12 @@ namespace VisiblePants
                     }
                     else
                         VisiblePantsUtility.ticksToCacheChange--;
-                    __instance.apparel.Notify_ApparelAdded(null);
+
+                    var sortWornApparelIntoDrawOrder = __instance.GetType().GetMethod("SortWornApparelIntoDrawOrder", BindingFlags.NonPublic | BindingFlags.Instance);
+                    var apparelChanged = __instance.GetType().GetMethod("ApparelChanged", BindingFlags.NonPublic | BindingFlags.Instance);
+
+                    sortWornApparelIntoDrawOrder.Invoke(__instance, new object[] { });
+                    apparelChanged.Invoke(__instance, new object[] { });
                 }
             }
 
