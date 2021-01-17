@@ -5,10 +5,10 @@
 	<packageId>XeoNovaDan.VisiblePants</packageId>
 	<url>https://steamcommunity.com/sharedfiles/filedetails/?id=926698084</url>
 	<supportedVersions>
-		<li>1.0</li>
 		<li>1.1</li>
+		<li>1.2</li>
 	</supportedVersions>
-	<description>Current version: v2.3.0.3 (2nd March 2020)\n\nA mod that allows you to see everybody's trousers, for that complete feel!</description>
+	<description>A mod that allows you to see everybody's trousers, for that complete feel!</description>
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
