@@ -4,37 +4,32 @@ using HarmonyLib;
 
 namespace VisiblePants
 {
-
     public static class Patch_Pawn
     {
-
         [HarmonyPatch(typeof(Pawn))]
         [HarmonyPatch(nameof(Pawn.Tick))]
         public static class Patch_Tick
         {
-
+            // Redraw pawn apparel if settings have changed
             public static void Postfix(Pawn __instance)
             {
-                // Redraw pawn apparel if settings have changed
-                if (__instance.apparel != null && VisiblePantsUtility.cachedDrawPantsOver != VisiblePantsSettings.drawPantsOver)
+                //Don't try to update anything that doesn't have apparel
+                if (__instance.apparel == null) return;
+
+                //Have to check that we have a valid key
+                if (__instance.Name == null) return;
+
+                var redrawFound = VisiblePantsUtility.NeedsRedraw.TryGetValue(__instance.Name, out var needsRedraw);
+                if (needsRedraw || !redrawFound)
                 {
-                    if (VisiblePantsUtility.ticksToCacheChange == 0)
-                    {
-                        VisiblePantsUtility.ticksToCacheChange = GenTicks.TicksPerRealSecond;
-                        VisiblePantsUtility.cachedDrawPantsOver = VisiblePantsSettings.drawPantsOver;
-                    }
-                    else
-                        VisiblePantsUtility.ticksToCacheChange--;
+                    var sortWornApparelIntoDrawOrder = __instance.apparel.GetType().GetMethod("SortWornApparelIntoDrawOrder", BindingFlags.NonPublic | BindingFlags.Instance);
+                    sortWornApparelIntoDrawOrder.Invoke(__instance.apparel, new object[] { });
 
-                    var sortWornApparelIntoDrawOrder = __instance.GetType().GetMethod("SortWornApparelIntoDrawOrder", BindingFlags.NonPublic | BindingFlags.Instance);
-                    var apparelChanged = __instance.GetType().GetMethod("ApparelChanged", BindingFlags.NonPublic | BindingFlags.Instance);
+                    __instance.apparel.Notify_ApparelChanged();
 
-                    sortWornApparelIntoDrawOrder.Invoke(__instance, new object[] { });
-                    apparelChanged.Invoke(__instance, new object[] { });
+                    VisiblePantsUtility.NeedsRedraw[__instance.Name] = false;
                 }
             }
-
         }
-
     }
 }

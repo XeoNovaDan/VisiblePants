@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using Verse;
 
 namespace VisiblePants
@@ -26,8 +28,10 @@ namespace VisiblePants
             Scribe_Values.Look(ref drawPantsOver, "drawPantsOver", true);
             base.ExposeData();
 
-            if (Scribe.mode == LoadSaveMode.PostLoadInit)
-                VisiblePantsUtility.cachedDrawPantsOver = drawPantsOver;
+            foreach (var key in VisiblePantsUtility.NeedsRedraw.Keys.ToList())
+            {
+                VisiblePantsUtility.NeedsRedraw[key] = true;
+            }
         }
     }
 }

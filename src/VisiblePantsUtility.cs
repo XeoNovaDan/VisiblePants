@@ -1,14 +1,12 @@
-﻿using Verse;
+﻿using System.Collections.Generic;
+using Verse;
 
 namespace VisiblePants
 {
 
     public static class VisiblePantsUtility
     {
-
-        public static bool cachedDrawPantsOver;
-        public static int ticksToCacheChange = GenTicks.TicksPerRealSecond;
-
+        public static Dictionary<Name, bool> NeedsRedraw = new Dictionary<Name, bool>();
     }
 
 }
