@@ -1,7 +1,7 @@
 <Patch>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>VFE - Mechanoids : Unoffical Add-On</li>
+			<li>VFE-M: Add-On<</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
