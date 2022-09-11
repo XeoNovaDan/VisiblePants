@@ -1,7 +1,7 @@
 <Patch>
 	<Operation Class="PatchOperationFindMod">
 		<mods>
-			<li>VFE-M: Add-On<</li>
+			<li>Vanilla Factions Expanded - Mechanoids</li>
 		</mods>
 		<match Class="PatchOperationSequence">
 			<operations>
@@ -9,21 +9,21 @@
 					<success>Always</success>
 					<operations>
 						<li Class="PatchOperationTest">
-							<xpath>/Defs/ThingDef[defName="MAO_MechanitePants"]/apparel/wornGraphicPath</xpath>
+							<xpath>/Defs/ThingDef[defName="VFE_MechanitePants"]/apparel/wornGraphicPath</xpath>
 						</li>
 						<li Class="PatchOperationRemove">
-							<xpath>/Defs/ThingDef[defName="MAO_MechanitePants"]/apparel/wornGraphicPath</xpath>
+							<xpath>/Defs/ThingDef[defName="VFE_MechanitePants"]/apparel/wornGraphicPath</xpath>
 						</li>
 					</operations>
 				</li>
 				<li Class="PatchOperationAddModExtension">
-					<xpath>/Defs/ThingDef[defName="MAO_MechanitePants"]</xpath>
+					<xpath>/Defs/ThingDef[defName="VFE_MechanitePants"]</xpath>
 					<value>
 						<li Class="VisiblePants.ThingDefExtension"/>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
-					<xpath>/Defs/ThingDef[defName="MAO_MechanitePants"]/apparel</xpath>
+					<xpath>/Defs/ThingDef[defName="VFE_MechanitePants"]/apparel</xpath>
 					<value>
 						<wornGraphicPath>MechanoidsAddOn/Things/Pawn/Humanlike/Apparel/MechanitePants/MechanitePants</wornGraphicPath>
 					</value>
