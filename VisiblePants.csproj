@@ -17,7 +17,7 @@
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>v1.3\Assemblies\</OutputPath>
+    <OutputPath>v1.4\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,15 +26,15 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>v1.3\Assemblies\</OutputPath>
+    <OutputPath>v1.4\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Lib.Harmony.2.1.0\lib\net472\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.2.2\lib\net472\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -183,6 +183,9 @@
     <Content Include="Common\Textures\VanillaApparelExpanded\Things\Pawn\Humanlike\Apparel\Trousers\Trousers_Thin_south.png" />
     <Content Include="LoadFolders.xml" />
     <Content Include="v1.3\Assemblies\VisiblePants.dll" />
+    <Content Include="v1.4\Assemblies\0Harmony.dll" />
+    <Content Include="v1.4\Assemblies\0Harmony.xml" />
+    <Content Include="v1.4\Assemblies\VisiblePants.dll" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -191,6 +194,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>call $(ProjectDir)Install.bat $(ConfigurationName) "$(ProjectDir)" "$(ProjectName)" "About Common v1.1 v1.2 v1.3" "LoadFolders.xml"</PostBuildEvent>
+    <PostBuildEvent>$(ProjectDir)Install.bat $(ConfigurationName) "$(ProjectDir)" "$(ProjectName)" "About Common v1.1 v1.2 v1.3 v1.4" "LoadFolders.xml"</PostBuildEvent>
   </PropertyGroup>
 </Project>
